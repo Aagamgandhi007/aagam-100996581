@@ -2,21 +2,21 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: [
       'build', '-t',
-      'us-central1-docker.pkg.dev/semester-2-gcp-labs/aagam-100996581/app:${SHORT_SHA}',
+      'us-central1-docker.pkg.dev/helpful-airway-447521-j4/gcp-assignment/app:${SHORT_SHA}',
       '.'
     ]
 
   - name: 'gcr.io/cloud-builders/docker'
     args: [
       'push',
-      'us-central1-docker.pkg.dev/semester-2-gcp-labs/aagam-100996581/app:${SHORT_SHA}'
+      'us-central1-docker.pkg.dev/helpful-airway-447521-j4/gcp-assignment/app:${SHORT_SHA}'
     ]
 
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: 'gcloud'
     args: [
       'run', 'deploy', 'assignment2-service',
-      '--image', 'us-central1-docker.pkg.dev/semester-2-gcp-labs/aagam-100996581/app:${SHORT_SHA}',
+      '--image', 'us-central1-docker.pkg.dev/helpful-airway-447521-j4/gcp-assignment/app:${SHORT_SHA}',
       '--region', 'us-central1',
       '--platform', 'managed',
       '--allow-unauthenticated'
