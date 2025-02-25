@@ -3,7 +3,7 @@ steps:
     args: [
       'build', '-t',
       'us-central1-docker.pkg.dev/helpful-airway-447521-j4/aagam-100996581/app:${SHORT_SHA}',
-      '-f', 'Assignment 2 Files/Dockerfile', 'Assignment 2 Files'
+      '.'
     ]
 
   - name: 'gcr.io/cloud-builders/docker'
@@ -21,6 +21,3 @@ steps:
       '--platform', 'managed',
       '--allow-unauthenticated'
     ]
-
-options:
-  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
