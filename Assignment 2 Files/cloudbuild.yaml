@@ -3,7 +3,7 @@ steps:
     args: [
       'build', '-t',
       'us-central1-docker.pkg.dev/helpful-airway-447521-j4/gcp-assignment/app:${SHORT_SHA}',
-      '.'
+      '-f', 'Assignment 2 Files/Dockerfile', 'Assignment 2 Files'
     ]
 
   - name: 'gcr.io/cloud-builders/docker'
